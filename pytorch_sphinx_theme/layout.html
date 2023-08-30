@@ -109,6 +109,21 @@
   {% include "fonts.html" %}
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.2/css/all.css"
     integrity="sha384-vSIIfh2YWi9wW0r9iZe7RJPrKwp6bG+s9QZMoITbCckVJqGCCRhc+ccxNcdpHuYu" crossorigin="anonymous">
+  <script>
+    window.onload = function(){
+      try {
+        if (window.self === window.top) {
+          console.log('add by jsweber: it not is in iframe');
+          var header = document.getElementById('header-holder');
+          header.style = 'display: flex';
+
+        }
+      } catch(e) {
+        console.log('add by jsweber: ', err);
+      }
+    }
+
+  </script>
 </head>
 
 <div class="container-fluid header-holder tutorials-header" id="header-holder">
@@ -307,6 +322,10 @@
   <!-- Begin Footer -->
 
   <div class="container-fluid docs-tutorials-resources" id="docs-tutorials-resources">
+    <div class="docs-tutorials-resource-text">
+      <span class="docs-tutorials-resource-text-number">@沪ICP备2021009351号-23</span>
+      <a class="docs-tutorials-resource-text-policy" href="/policy">OpenCompass Open Platform Service Agreement</a>
+    </div>
   </div>
 
   <!-- End Footer -->

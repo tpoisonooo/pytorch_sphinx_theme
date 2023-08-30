@@ -44,7 +44,7 @@
 }
 
 html {
-  font-family: sans-serif;
+  font-family: 'PingFang SC';
   line-height: 1.15;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -61,7 +61,8 @@ article, aside, dialog, figcaption, figure, footer, header, hgroup, main, nav, s
 
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  font-family: 'PingFang SC';
+  line-height: 21px;
   font-size: 1rem;
   font-weight: 400;
   line-height: 1.5;
@@ -9542,7 +9543,7 @@ html {
 }
 
 body {
-  font-family: FreightSans, Helvetica Neue, Helvetica, Arial, sans-serif;
+  /* font-family: FreightSans, Helvetica Neue, Helvetica, Arial, sans-serif; */
 }
 
 a:link,
@@ -9684,7 +9685,7 @@ pre {
 }
 
 .header-holder {
-  height: 68px;
+  height: 64px;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
@@ -9704,7 +9705,7 @@ pre {
 }
 @media screen and (min-width: 1100px) {
   .header-holder {
-    height: 90px;
+    height: 64px;
   }
 }
 
@@ -9733,25 +9734,15 @@ pre {
   }
 }
 
-.header-logo {
-  height: 30px;
-  width: 115px;
-  background-image: url("../images/logo.png");
+.header-container .header-logo {
   background-repeat: no-repeat;
-  background-size: 115px 30px;
+  background-image: url(../image/logo.svg);
+  background-size: cover;
+  height: 36px;
+  width: 210px;
   display: block;
   float: left;
   z-index: 10;
-}
-@media screen and (min-width: 1100px) {
-  .header-logo {
-    background-size: 154px 40px;
-    position: absolute;
-    height: 40px;
-    width: 154px;
-    top: -4px;
-    float: none;
-  }
 }
 
 .main-menu-open-button {
@@ -9798,6 +9789,7 @@ pre {
 }
 .header-holder .main-menu ul li {
   display: inline-block;
+  margin-top: 2px;
   margin-right: 40px;
   position: relative;
 }
@@ -9829,15 +9821,17 @@ pre {
 }
 .header-holder .main-menu ul li a {
   color: #ffffff;
-  font-size: 1.3rem;
+  display: inline-block;
+  font-size: 1rem;
   letter-spacing: 0;
   line-height: 2.125rem;
+  height: 2.125rem;
   text-align: center;
   text-decoration: none;
 }
 @media screen and (min-width: 1100px) {
   .header-holder .main-menu ul li a:hover {
-    color: #2980b9;
+    /* color: #2980b9; */
   }
 }
 
@@ -9976,19 +9970,41 @@ pre {
 }
 
 .docs-tutorials-resources {
-  background-color: #262626;
+  background-color: #F7F9FB;
   color: #ffffff;
-  padding-top: 2.5rem;
-  padding-bottom: 2.5rem;
+  padding-top: 1.5rem;
+  padding-bottom: 2rem;
   position: relative;
   z-index: 201;
+  font-size: 0.9rem;
 }
-@media screen and (min-width: 768px) {
+@media screen and (max-width: 1195px) {
   .docs-tutorials-resources {
-    padding-top: 5rem;
-    padding-bottom: 5rem;
+    display: none;
   }
 }
+
+.docs-tutorials-resource-text {
+  font-size: 0.9rem;
+  line-height: 1.8rem;
+  padding: 1.5rem;
+  color: rgba(0,0,0,.55);
+  margin-left: 338px;
+}
+
+.docs-tutorials-resource-text-number {
+
+}
+
+.docs-tutorials-resource-text-policy {
+  color: rgba(0,0,0,.55)!important;
+  font-size: 0.9rem!important;
+  line-height: 1.8rem;
+  margin-left: 5rem;
+  text-decoration: none;
+  cursor: pointer;
+}
+
 .docs-tutorials-resources p {
   color: #929292;
   font-size: 1.125rem;
@@ -10342,7 +10358,7 @@ ul.pytorch-breadcrumbs a {
 }
 
 .tutorials-header .main-menu ul li a {
-  color: #262626;
+  color: #0d0b10;
 }
 .tutorials-header .main-menu-open-button {
   background-image: url("../images/icon-menu-dots-dark.svg");
@@ -10990,7 +11006,8 @@ article.pytorch-article .admonition >:last-child {
   color: #262626;
 }
 .pytorch-article div.sphx-glr-download a code, .pytorch-article div.sphx-glr-download a kbd, .pytorch-article div.sphx-glr-download a pre, .pytorch-article div.sphx-glr-download a samp, .pytorch-article div.sphx-glr-download a span.pre {
-  font-family: FreightSans, Helvetica Neue, Helvetica, Arial, sans-serif;
+  /* font-family: FreightSans, Helvetica Neue, Helvetica, Arial, sans-serif; */
+  font-family: PingFang SC;
 }
 
 .pytorch-article p.sphx-glr-script-out {
@@ -11172,7 +11189,7 @@ a:hover {
 }
 @media screen and (min-width: 1100px) {
   .header-holder .main-menu ul li a:hover {
-    color: #2980b9;
+    /* color: #2980b9; */
   }
 }
 
@@ -12073,8 +12090,13 @@ article.pytorch-article .tutorials-callout-container .btn.callout-button a {
 }
 
 .container-fluid.header-holder {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
   padding-right: 0;
   padding-left: 0;
+  display: none;
 }
 
 .header-holder .container {
@@ -12084,8 +12106,8 @@ article.pytorch-article .tutorials-callout-container .btn.callout-button a {
 }
 @media screen and (min-width: 1101px) {
   .header-holder .container {
-    padding-right: 1.875rem;
-    padding-left: 1.875rem;
+    padding-right: 2.875rem;
+    padding-left: 2.875rem;
   }
 }
 
@@ -12095,7 +12117,7 @@ article.pytorch-article .tutorials-callout-container .btn.callout-button a {
           justify-content: unset;
   position: relative;
 }
-@media screen and (min-width: 1101px) {
+/* @media screen and (min-width: 1101px) {
   .header-holder .main-menu ul {
     padding-left: 0;
     margin-left: 26%;
@@ -12106,7 +12128,7 @@ article.pytorch-article .tutorials-callout-container .btn.callout-button a {
     padding-left: 38px;
     margin-left: 310px;
   }
-}
+} */
 
 .pytorch-page-level-bar {
   display: none;
@@ -12202,23 +12224,18 @@ article.pytorch-article .tutorials-callout-container .btn.callout-button a {
 }
 
 .resources-dropdown-menu {
-  left: -75px;
-  width: 226px;
   display: none;
   position: absolute;
   z-index: 1000;
-  display: none;
   float: left;
-  min-width: 10rem;
-  padding: 0.5rem 0;
+  /* min-width: 10rem; */
   font-size: 1rem;
   color: #212529;
-  text-align: left;
   list-style: none;
   background-color: #ffffff;
   background-clip: padding-box;
-  border: 1px solid rgba(0, 0, 0, 0.15);
   border-radius: 0.25rem;
+  box-shadow: 1px 1px 5px #bbb;
 }
 
 .resources-dropdown:hover .resources-dropdown-menu {
@@ -12250,50 +12267,49 @@ article.pytorch-article .tutorials-callout-container .btn.callout-button a {
 .with-down-arrow {
   padding-right: 2rem;
   position: relative;
-  background-image: url("../images/chevron-down-black.svg");
+  background-image: url("../images/DownOutlined.svg");
   background-size: 14px 18px;
-  background-position: top 7px right 10px;
+  background-position: top 8px right 10px;
   background-repeat: no-repeat;
 }
 .with-down-arrow:hover {
-  background-image: url("../images/chevron-down-blue.svg");
+  background-image: url("../images/DownOutlined.svg");
   background-repeat: no-repeat;
 }
 
-.header-holder .main-menu ul li .resources-dropdown .doc-dropdown-option {
+/* .header-holder .main-menu ul li .resources-dropdown .doc-dropdown-option {
   padding-top: 1rem;
-}
+} */
 
 .header-holder .main-menu ul li a.nav-dropdown-item {
   display: block;
   font-size: 1rem;
-  line-height: 1.3125rem;
+  line-height: 1.2rem;
   width: 100%;
-  padding: 0.25rem 1.5rem;
+  padding: 0 1rem;
   clear: both;
   font-weight: 400;
   color: #979797;
   text-align: center;
   background-color: transparent;
-  border-bottom: 1px solid #e2e2e2;
 }
 .header-holder .main-menu ul li a.nav-dropdown-item:last-of-type {
   border-bottom-color: transparent;
 }
 .header-holder .main-menu ul li a.nav-dropdown-item:hover {
-  background-color: #2980b9;
-  color: white;
+  background-color: rgba(200, 200, 200, 0.2);
+  color: #0d0b10;
 }
 .header-holder .main-menu ul li a.nav-dropdown-item .dropdown-title {
-  font-size: 1.125rem;
-  color: #6c6c6d;
+  font-size: 0.9rem;
+  color: #0d0b10;
   letter-spacing: 0;
   line-height: 34px;
+  background-color: transparent;
 }
 
 .header-holder .main-menu ul li a.nav-dropdown-item:hover .dropdown-title {
-  background-color: #2980b9;
-  color: white;
+  color: #0d0b10;
 }
 
 .MathJax {
