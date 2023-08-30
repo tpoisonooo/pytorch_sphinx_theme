@@ -12306,6 +12306,8 @@ article.pytorch-article .tutorials-callout-container .btn.callout-button a {
   letter-spacing: 0;
   line-height: 34px;
   background-color: transparent;
+  display: inline-block;
+  min-width: 80px;
 }
 
 .header-holder .main-menu ul li a.nav-dropdown-item:hover .dropdown-title {
