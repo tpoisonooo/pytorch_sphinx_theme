@@ -9738,8 +9738,8 @@ pre {
   background-repeat: no-repeat;
   background-image: url(../image/logo.svg);
   background-size: cover;
-  height: 36px;
-  width: 210px;
+  height: 52px;
+  width: 250px;
   display: block;
   float: left;
   z-index: 10;
@@ -12316,6 +12316,46 @@ article.pytorch-article .tutorials-callout-container .btn.callout-button a {
 
 .MathJax {
   font-size: 100% !important;
+}
+
+/* chat button and gradio container style */
+
+#chatButton {
+  position: fixed;
+  bottom: 2px;
+  right: 70px;
+  padding: 2px 8px;
+  background-color: #81b360; /* 青绿色背景 */
+  color: #000000; /* 黑色文字 */
+  border: 1px solid #000000; /* 黑色轮廓 */
+  border-radius: 10px; /* 圆角 */
+  cursor: pointer;
+  font-size: 16px; /* 字体大小 */
+  font-weight: normal;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* 轻微的阴影效果 */
+  transition: background-color 0.3s, box-shadow 0.3s; /* 过渡效果 */
+}
+
+#chatButton:hover {
+  background-color: #579032; /* 鼠标悬停时的背景颜色更深 */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3); /* 鼠标悬停时的阴影效果 */
+}
+#gradioContainer {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transform: translate(-50%, -50%);
+  width: 80%;
+  max-width: 80%;
+  height: 80%;
+  border-radius: 10px;
+  /* background-color: white; */
+  padding: 16px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  display: none; /* Initially hidden */
 }
 
 /*# sourceMappingURL=theme.css.map */

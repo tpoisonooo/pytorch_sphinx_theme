@@ -31,7 +31,7 @@
   <title>{{ title|striptags|e }}{{ titlesuffix }}</title>
   {% endblock %}
 
-  <link rel="shortcut icon" href="{{ pathto('static/images/opencompass_logo.svg', 1) }}" />
+  <link rel="shortcut icon" href="{{ pathto('static/images/logo_icon.svg', 1) }}" />
   {# CANONICAL URL #}
   {% if theme_canonical_url %}
   <link rel="canonical" href="{{ theme_canonical_url }}{{ pagename }}.html" />
@@ -321,12 +321,17 @@
 
   <!-- Begin Footer -->
 
-  <div class="container-fluid docs-tutorials-resources" id="docs-tutorials-resources">
-    <div class="docs-tutorials-resource-text">
-      <span class="docs-tutorials-resource-text-number">@沪ICP备2021009351号-23</span>
-      <a class="docs-tutorials-resource-text-policy" href="/policy">OpenCompass Open Platform Service Agreement</a>
-    </div>
+  <button id="chatButton">Chat with AI</button>
+  <div id="gradioContainer">
+      <!-- Gradio iframe will be loaded here -->
   </div>
+
+  <!-- <div class="container-fluid docs-tutorials-resources" id="docs-tutorials-resources">
+    <div class="docs-tutorials-resource-text">
+      <span class="docs-tutorials-resource-text-number"></span>
+      <a class="docs-tutorials-resource-text-policy" href="/policy"></a>
+    </div>
+  </div> -->
 
   <!-- End Footer -->
 
@@ -387,6 +392,41 @@
         $(this).closest("a").addClass("has-code");
       });
     })
+
+    // 传递 cookie
+    document.cookie = "SameSite=None; path=/";
+    document.getElementById('chatButton').addEventListener('click', function(event) {
+
+        var gradioContainer = document.getElementById('gradioContainer');
+    
+        if (gradioContainer.style.display === 'none') {
+            gradioContainer.style.display = 'block';
+        } else {
+            gradioContainer.style.display = 'none';
+        } 
+      
+        // Load the Gradio iframe here
+        var iframe = document.createElement('iframe');
+        iframe.id = 'gradioFrame'
+        iframe.src = 'http://101.133.161.204:18444/'; // Replace with your Gradio page URL
+        iframe.style.width = '100%';
+        iframe.style.height = '100%';
+        iframe.style.border = 'none';
+        gradioContainer.innerHTML = ''; // Clear previous content
+        
+        gradioContainer.appendChild(iframe);
+        
+        event.stopPropagation();
+    });
+
+    // 给document添加点击事件
+    document.addEventListener('click', function() {
+        // 检查点击事件是否发生在gradioContainer内部
+        if (!gradioContainer.contains(event.target)) {
+            // 如果不是，则隐藏gradioContainer
+            gradioContainer.style.display = 'none';
+        }
+    });
   </script>
 </body>
 
